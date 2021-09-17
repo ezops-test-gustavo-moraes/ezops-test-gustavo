@@ -19,7 +19,7 @@ resource "aws_instance" "ec2-ezops" {
             "sudo apt update",
             "apt-cache policy docker-ce",
             "yes Y | sudo apt install docker-ce",
-            "sudo docker push gustavomoraesfonseca/ezops-test:v1",
+            "sudo docker pull gustavomoraesfonseca/ezops-test:v1",
             "sudo docker run --restart always -d -p 3000:3000 gustavomoraesfonseca/ezops-test:v1"
         ]
         connection {
