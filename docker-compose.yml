@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  lognautwebv1:
+    image: gustavomoraesfonseca/ezops-test:v1
+    build: .
+    ports:
+      - 3000:3000

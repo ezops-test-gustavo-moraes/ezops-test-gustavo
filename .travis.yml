@@ -1,0 +1,16 @@
+language: bash
+services: docker
+before_install:
+  - echo "We are in the Docker folder!"
+script:
+  - docker-compose build
+before_deploy:
+  - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+deploy:
+  provider: script
+  script:
+    docker push gustavomoraesfonseca/ezops-test:v1;
+  on:
+    branch: master
+notifications:
+  email: false
